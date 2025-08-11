@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança Vitória - Sua Segurança, Nossa Prioridade</title>
+    <!-- Inclui o CDN do Tailwind CSS para um estilo moderno e responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Importa a fonte Inter do Google Fonts para uma tipografia limpa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos customizados -->
+    <style>
+        html {
+            scroll-behavior: smooth; /* Adicionado no elemento html para rolagem suave */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-bg {
+            background-color: #2a2829; /* Cor de fundo do cabeçalho */
+        }
+        .text-primary {
+            color: #2a2829; /* Cor de texto principal */
+        }
+        .bg-primary {
+            background-color: #2a2829; /* Cor de fundo principal */
+        }
+        .btn-whatsapp {
+            background-color: #25D366; /* Verde WhatsApp */
+            transition: transform 0.2s;
+        }
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+        }
+        .floating-whatsapp {
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            z-index: 50;
+        }
+        .hero-banner {
+            background-image: url('https://i.ibb.co/cG81SmV/Design-sem-nome-6.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        /* Ajusta o posicionamento da imagem de fundo para monitores ultrawide (21:9) */
+        @media (min-aspect-ratio: 21/9) {
+            .hero-banner {
+                background-position: bottom;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="fixed floating-whatsapp flex items-center justify-center rounded-full btn-whatsapp" target="_blank">
+        <!-- Ícone da imagem do WhatsApp -->
+        <img src="https://i.ibb.co/KpzDshMp/Design-sem-nome-3.png" alt="Ícone do WhatsApp" class="h-8 w-8">
+    </a>
+
+    <!-- Cabeçalho (Header) -->
+    <header class="header-bg text-white p-4 sticky top-0 z-40">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <!-- Logo da empresa -->
+            <a href="#">
+                <!-- Aumento do tamanho da logo para h-12 em mobile e h-16 em desktop -->
+                <img src="https://i.ibb.co/knm9Q32/Design-sem-nome-2.png" alt="Logo Segurança Vitória" class="h-12 md:h-16 w-auto">
+            </a>
+
+            <!-- Menu de Navegação -->
+            <nav class="md:block hidden">
+                <ul class="flex space-x-6">
+                    <li><a href="#servicos" class="hover:text-gray-300 transition-colors">Serviços</a></li>
+                    <li><a href="#diferenciais" class="hover:text-gray-300 transition-colors">Diferenciais</a></li>
+                    <li><a href="#sobre" class="hover:text-gray-300 transition-colors">Sobre Nós</a></li>
+                    <li><a href="#depoimentos" class="hover:text-gray-300 transition-colors">Depoimentos</a></li>
+                    <li><a href="#contato" class="hover:text-gray-300 transition-colors">Contato</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botão de Contato -->
+            <div class="mt-4 md:mt-0">
+                <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-2 px-4 rounded-full transition-colors" target="_blank">
+                    Solicite Orçamento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero-banner relative flex items-center justify-center text-center text-white h-[60vh] md:h-[80vh] bg-cover bg-center">
+        <!-- Overlay para escurecer a imagem e destacar o texto -->
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">Sua Segurança,<br>Nossa Prioridade!</h1>
+            <p class="mt-4 text-lg md:text-xl font-medium drop-shadow-md">Proteção e tranquilidade para o que é mais importante para você.</p>
+            <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="inline-block mt-8 bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-3 px-8 rounded-full text-lg transition-colors" target="_blank">
+                Solicite seu orçamento agora pelo WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Nossos Serviços</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Serviço 1: Portaria -->
+                <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md transition-shadow hover:shadow-xl">
+                    <img src="https://i.ibb.co/0VC54Yxg/3.png" alt="Ícone de Portaria" class="h-16 w-16 mb-4">
+                    <h3 class="text-xl font-semibold text-primary">Portaria</h3>
+                    <p class="mt-2 text-gray-600">Garantimos o controle de acesso e a segurança de sua propriedade com profissionais treinados.</p>
+                </div>
+                <!-- Serviço 2: Segurança para Evento -->
+                <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md transition-shadow hover:shadow-xl">
+                    <img src="https://i.ibb.co/Rkk96Zmd/4.png" alt="Ícone de Segurança para Evento" class="h-16 w-16 mb-4">
+                    <h3 class="text-xl font-semibold text-primary">Segurança para Evento</h3>
+                    <p class="mt-2 text-gray-600">Planejamento e execução de segurança para eventos de pequeno, médio e grande porte.</p>
+                </div>
+                <!-- Serviço 3: Segurança eletrônica residencial -->
+                <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md transition-shadow hover:shadow-xl">
+                    <img src="https://i.ibb.co/MyHrFPZY/5.png" alt="Ícone de Segurança Eletrônica Residencial" class="h-16 w-16 mb-4">
+                    <h3 class="text-xl font-semibold text-primary">Segurança Eletrônica Residencial</h3>
+                    <p class="mt-2 text-gray-600">Monitoramento 24h, câmeras e alarmes para proteger seu lar e sua família.</p>
+                </div>
+                <!-- Serviço 4: Atendimento de alarme -->
+                <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md transition-shadow hover:shadow-xl">
+                    <img src="https://i.ibb.co/jmz1xpQ/6.png" alt="Ícone de Atendimento de Alarme" class="h-16 w-16 mb-4">
+                    <h3 class="text-xl font-semibold text-primary">Atendimento de Alarme</h3>
+                    <p class="mt-2 text-gray-600">Pronta resposta a qualquer disparo de alarme, com equipe de vigilância preparada.</p>
+                </div>
+                <!-- Serviço 5: Segurança eletrônica predial -->
+                <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md transition-shadow hover:shadow-xl">
+                    <img src="https://i.ibb.co/hFWGMFj7/7.png" alt="Ícone de Segurança Eletrônica Predial" class="h-16 w-16 mb-4">
+                    <h3 class="text-xl font-semibold text-primary">Segurança Eletrônica Predial</h3>
+                    <p class="mt-2 text-gray-600">Soluções completas de segurança para condomínios e edifícios comerciais.</p>
+                </div>
+                <!-- Serviço 6: Ronda Patrimonial -->
+                <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md transition-shadow hover:shadow-xl">
+                    <img src="https://i.ibb.co/Xkd6cwRZ/8.png" alt="Ícone de Ronda Patrimonial" class="h-16 w-16 mb-4">
+                    <h3 class="text-xl font-semibold text-primary">Ronda Patrimonial</h3>
+                    <p class="mt-2 text-gray-600">Monitoramento físico e preventivo para garantir a integridade do seu patrimônio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Diferenciais -->
+    <section id="diferenciais" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Por que escolher a Segurança Vitória?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Diferencial 1: Mais de 25 anos de experiência -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Mais de 25 anos de experiência</h3>
+                    <p class="text-gray-600">Tradição e credibilidade no setor de segurança desde 1998.</p>
+                </div>
+                <!-- Diferencial 2: Equipe Treinada e Certificada -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Equipe Treinada e Certificada</h3>
+                    <p class="text-gray-600">Profissionais qualificados para garantir um atendimento ágil e eficiente.</p>
+                </div>
+                <!-- Diferencial 3: Atendimento 24 horas -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Atendimento 24 horas</h3>
+                    <p class="text-gray-600">Suporte imediato para qualquer ocorrência, a qualquer momento.</p>
+                </div>
+                <!-- Diferencial 4: Tecnologia de Ponta -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Tecnologia de Ponta</h3>
+                    <p class="text-gray-600">Sistemas modernos de monitoramento e equipamentos de última geração.</p>
+                </div>
+                <!-- Diferencial 5: Soluções Personalizadas -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Soluções Personalizadas</h3>
+                    <p class="text-gray-600">Planos de segurança adaptados às necessidades de cada cliente.</p>
+                </div>
+                <!-- Diferencial 6: Resposta Rápida -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-2">Resposta Rápida</h3>
+                    <p class="text-gray-600">Tempo de deslocamento otimizado para atender emergências.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-8">Sobre Nós</h2>
+            <div class="max-w-4xl mx-auto md:grid grid-cols-2 gap-8 items-center text-center md:text-left">
+                <!-- Conteúdo de texto à esquerda -->
+                <div>
+                    <p class="text-lg leading-relaxed text-justify mt-4">A Segurança Vitória, fundada em 1998, é uma empresa familiar especializada em segurança privada, sediada em Novo Hamburgo. Nosso principal objetivo é fornecer serviços de segurança de alta qualidade, garantindo a proteção e tranquilidade dos nossos clientes. Com uma equipe altamente treinada e dedicada, estamos comprometidos em oferecer soluções de segurança eficazes e personalizadas para atender às necessidades específicas de cada cliente.</p>
+                </div>
+                <!-- Imagem à direita -->
+                <div class="mt-8 md:mt-0">
+                    <img src="https://i.ibb.co/bn8hdbV/Design-sem-nome.png" alt="Imagem da fachada da empresa Segurança Vitória" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção de Depoimentos -->
+    <section id="depoimentos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Depoimentos de Clientes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <p class="text-lg leading-relaxed italic text-gray-700 mb-4">"Excelente serviço de segurança. Sinto-me mais seguro desde que contratei a Segurança Vitória."</p>
+                    <p class="font-semibold text-primary">- Marina Oliveira</p>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <p class="text-lg leading-relaxed italic text-gray-700 mb-4">"Equipe dedicada e atenciosa. Recomendo os serviços da Segurança Vitória a todos que buscam proteção de qualidade."</p>
+                    <p class="font-semibold text-primary">- João Silva</p>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <p class="text-lg leading-relaxed italic text-gray-700 mb-4">"Profissionais competentes e confiáveis. A Segurança Vitória é a melhor escolha em segurança privada."</p>
+                    <p class="font-semibold text-primary">- Ana Santos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato com Mapa -->
+    <section id="contato" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-8">Onde Estamos</h2>
+            <!-- Layout de duas colunas para desktop -->
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center rounded-lg overflow-hidden shadow-lg border-2 border-gray-200">
+                <!-- Lado esquerdo: Endereço e Contatos -->
+                <div class="p-6 md:p-8 bg-gray-50 h-full flex flex-col justify-center">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Informações de Contato</h3>
+                    <p class="text-lg text-gray-700 mb-2 font-semibold">Endereço:</p>
+                    <p class="text-gray-600 mb-4">R. São Jerônimo, 536 - Mauá, Novo Hamburgo - RS</p>
+                    
+                    <p class="text-lg text-gray-700 mb-2 font-semibold">Contato:</p>
+                    <p class="text-gray-600">(51) 3556-5127</p>
+                    <p class="text-gray-600">(51) 99018-2194</p>
+                    <p class="text-gray-600 mb-4">(51) 98045-6161</p>
+                    
+                    <!-- Botão para o WhatsApp -->
+                    <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." target="_blank" class="mt-4 flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors">
+                        <!-- Ícone da imagem do WhatsApp -->
+                        <img src="https://i.ibb.co/KpzDshMp/Design-sem-nome-3.png" alt="Ícone do WhatsApp" class="h-6 w-6">
+                        <span>WhatsApp</span>
+                    </a>
+                    
+                    <!-- Botão para o Instagram -->
+                    <a href="https://www.instagram.com/segurancavitoria_/" target="_blank" class="mt-4 flex items-center justify-center space-x-2 bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-full transition-colors">
+                        <!-- Ícone da imagem do Instagram -->
+                        <img src="https://i.ibb.co/99tvS3yP/Design-sem-nome-4.png" alt="Ícone do Instagram" class="h-6 w-6">
+                        <span>Instagram</span>
+                    </a>
+                </div>
+                <!-- Lado direito: Mapa do Google Maps -->
+                <div class="w-full h-96 md:h-full">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.717143920958!2d-51.109277724220815!3d-29.62953281077718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951941d3d623d325%3A0xc3f8e562725e24c2!2sR.%20S%C3%A3o%20Jer%C3%B4nimo%2C%20536%20-%20Ideal%2C%20Novo%20Hamburgo%20-%20RS%2C%2093548-190!5e0!3m2!1spt-BR!2sbr!4v1714578149867!5m2!1spt-BR!2sbr"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="bg-primary text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Logo no rodapé -->
+            <div class="mb-4">
+                <img src="https://i.ibb.co/knm9Q32/Design-sem-nome-2.png" alt="Logo Segurança Vitória" class="mx-auto h-12 w-auto">
+            </div>
+            <p class="mb-2">Rua São Jeronimo 536, Novo Hamburgo – 93548-190</p>
+            <p>&copy; 1998 Segurança Vitória. Todos os direitos reservados.</p>
+            <!-- Créditos com link para o Instagram -->
+            <p class="mt-4 text-xs text-white text-opacity-40">
+                Produzido por <a href="https://www.instagram.com/willssilveira/" target="_blank" class="hover:underline">William Silva - @willssilveira</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
