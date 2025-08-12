@@ -42,17 +42,25 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
             z-index: 50;
         }
-        .hero-banner {
-            background-image: url('https://i.ibb.co/cG81SmV/Design-sem-nome-6.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
         
-        /* Ajusta o posicionamento da imagem de fundo para monitores ultrawide (21:9) */
-        @media (min-aspect-ratio: 21/9) {
+        /* Ajusta o banner para telas maiores (desktop) */
+        @media (min-width: 768px) {
             .hero-banner {
-                background-position: bottom;
+                background-image: url('https://i.ibb.co/jB0STt5/Sua-Seguran-a-Nossa-Prioridade-1.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 30rem;
+            }
+        }
+         /* Ajusta o banner para telas menores (mobile) */
+        @media (max-width: 767px) {
+            .hero-banner {
+                background-image: url('https://i.ibb.co/rfqQKsw4/Sua-Seguran-a-Nossa-Prioridade-2.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: bottom; /* Altera a posição para manter a parte inferior da imagem */
+                height: 25rem; /* Ajusta a altura para dispositivos móveis */
             }
         }
     </style>
@@ -60,51 +68,67 @@
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Botão flutuante do WhatsApp -->
-    <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="fixed floating-whatsapp flex items-center justify-center rounded-full btn-whatsapp" target="_blank">
+    <a href="https://wa.me/5551996201635?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="fixed floating-whatsapp flex items-center justify-center rounded-full btn-whatsapp" target="_blank">
         <!-- Ícone da imagem do WhatsApp -->
         <img src="https://i.ibb.co/KpzDshMp/Design-sem-nome-3.png" alt="Ícone do WhatsApp" class="h-8 w-8">
     </a>
 
     <!-- Cabeçalho (Header) -->
     <header class="header-bg text-white p-4 sticky top-0 z-40">
-        <div class="container mx-auto flex justify-between items-center flex-wrap">
+        <div class="container mx-auto flex justify-between items-center">
             <!-- Logo da empresa -->
             <a href="#">
                 <!-- Aumento do tamanho da logo para h-12 em mobile e h-16 em desktop -->
                 <img src="https://i.ibb.co/knm9Q32/Design-sem-nome-2.png" alt="Logo Segurança Vitória" class="h-12 md:h-16 w-auto">
             </a>
 
-            <!-- Menu de Navegação -->
-            <nav class="md:block hidden">
+            <!-- Menu de Navegação para Desktop -->
+            <nav class="hidden md:block">
                 <ul class="flex space-x-6">
                     <li><a href="#servicos" class="hover:text-gray-300 transition-colors">Serviços</a></li>
                     <li><a href="#diferenciais" class="hover:text-gray-300 transition-colors">Diferenciais</a></li>
                     <li><a href="#sobre" class="hover:text-gray-300 transition-colors">Sobre Nós</a></li>
+                    <li><a href="#galeria" class="hover:text-gray-300 transition-colors">Galeria</a></li>
                     <li><a href="#depoimentos" class="hover:text-gray-300 transition-colors">Depoimentos</a></li>
                     <li><a href="#contato" class="hover:text-gray-300 transition-colors">Contato</a></li>
                 </ul>
             </nav>
 
-            <!-- Botão de Contato -->
-            <div class="mt-4 md:mt-0">
-                <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-2 px-4 rounded-full transition-colors" target="_blank">
-                    Solicite Orçamento
-                </a>
-            </div>
+            <!-- Botão do menu mobile (hambúrguer) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
         </div>
     </header>
 
-    <!-- Banner Principal -->
-    <section class="hero-banner relative flex items-center justify-center text-center text-white h-[60vh] md:h-[80vh] bg-cover bg-center">
-        <!-- Overlay para escurecer a imagem e destacar o texto -->
-        <div class="absolute inset-0 bg-black opacity-70"></div>
-        <div class="relative z-10 px-4">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">Sua Segurança,<br>Nossa Prioridade!</h1>
-            <p class="mt-4 text-lg md:text-xl font-medium drop-shadow-md">Proteção e tranquilidade para o que é mais importante para você.</p>
-            <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="inline-block mt-8 bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-3 px-8 rounded-full text-lg transition-colors" target="_blank">
-                Solicite seu orçamento agora pelo WhatsApp
+    <!-- Menu de navegação para Mobile (inicialmente oculto) -->
+    <nav id="mobile-menu" class="fixed inset-0 z-50 hidden bg-gray-800 bg-opacity-95 transform -translate-x-full transition-transform ease-in-out duration-300 md:hidden">
+        <div class="flex justify-between items-center p-4">
+            <a href="#">
+                <img src="https://i.ibb.co/knm9Q32/Design-sem-nome-2.png" alt="Logo Segurança Vitória" class="h-12 w-auto">
             </a>
+            <button id="mobile-menu-close-button" class="text-white focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
+        <ul class="flex flex-col items-center mt-12 space-y-6 text-white text-xl">
+            <li><a href="#servicos" class="block w-full text-center hover:bg-gray-700 p-2 rounded transition-colors">Serviços</a></li>
+            <li><a href="#diferenciais" class="block w-full text-center hover:bg-gray-700 p-2 rounded transition-colors">Diferenciais</a></li>
+            <li><a href="#sobre" class="block w-full text-center hover:bg-gray-700 p-2 rounded transition-colors">Sobre Nós</a></li>
+            <li><a href="#galeria" class="block w-full text-center hover:bg-gray-700 p-2 rounded transition-colors">Galeria</a></li>
+            <li><a href="#depoimentos" class="block w-full text-center hover:bg-gray-700 p-2 rounded transition-colors">Depoimentos</a></li>
+            <li><a href="#contato" class="block w-full text-center hover:bg-gray-700 p-2 rounded transition-colors">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner Principal -->
+    <section class="hero-banner">
+        <a href="https://wa.me/5551996201635?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." class="absolute inset-0 z-10" target="_blank"></a>
     </section>
 
     <!-- Seção de Serviços -->
@@ -207,25 +231,128 @@
             </div>
         </div>
     </section>
-    
-    <!-- Seção de Depoimentos -->
-    <section id="depoimentos" class="py-16 bg-white">
+
+    <!-- Nova Seção de Galeria -->
+    <section id="galeria" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Depoimentos de Clientes</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Galeria</h2>
+            <div class="relative overflow-hidden">
+                <!-- Wrapper do Carrossel -->
+                <div id="carousel-wrapper" class="flex transition-transform duration-500 ease-in-out">
+                    <!-- Slide 1 -->
+                    <div class="flex-none w-full md:w-1/3 p-4">
+                        <div class="bg-gray-50 rounded-lg shadow-md p-4 h-full">
+                            <img src="https://i.ibb.co/4ZrjNWqX/Sua-Seguran-a-Nossa-Prioridade-3.png" alt="Foto de uma Moto Viatura" class="w-full h-auto rounded-lg mb-4 border-2 border-gray-200">
+                            <p class="text-center font-semibold text-primary">Moto viatura</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="flex-none w-full md:w-1/3 p-4">
+                        <div class="bg-gray-50 rounded-lg shadow-md p-4 h-full">
+                            <img src="https://i.ibb.co/sv44H6cz/Sua-Seguran-a-Nossa-Prioridade-4.png" alt="Foto de uma Viatura de propulsão elétrica" class="w-full h-auto rounded-lg mb-4 border-2 border-gray-200">
+                            <p class="text-center font-semibold text-primary">Viatura de propulsão elétrica</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="flex-none w-full md:w-1/3 p-4">
+                        <div class="bg-gray-50 rounded-lg shadow-md p-4 h-full">
+                            <img src="https://i.ibb.co/HD2q6g9q/Sua-Seguran-a-Nossa-Prioridade-5.png" alt="Foto da Central no bairro Mauá - NH" class="w-full h-auto rounded-lg mb-4 border-2 border-gray-200">
+                            <p class="text-center font-semibold text-primary">Central no bairro Mauá - NH</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="flex-none w-full md:w-1/3 p-4">
+                        <div class="bg-gray-50 rounded-lg shadow-md p-4 h-full">
+                            <img src="https://i.ibb.co/spnfw0W7/Sua-Seguran-a-Nossa-Prioridade-6.png" alt="Foto da Guarita no bairro Boa Vista - NH" class="w-full h-auto rounded-lg mb-4 border-2 border-gray-200">
+                            <p class="text-center font-semibold text-primary">Guarita no bairro Boa Vista - NH</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="flex-none w-full md:w-1/3 p-4">
+                        <div class="bg-gray-50 rounded-lg shadow-md p-4 h-full">
+                            <img src="https://i.ibb.co/sJbfkshh/Sua-Seguran-a-Nossa-Prioridade-7.png" alt="Foto de Monitoramento de câmeras" class="w-full h-auto rounded-lg mb-4 border-2 border-gray-200">
+                            <p class="text-center font-semibold text-primary">Monitoramento de câmeras</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botões de navegação do carrossel -->
+            <div class="flex justify-center space-x-4 mt-8">
+                <button id="prev-button" class="bg-primary text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-800">Anterior</button>
+                <button id="next-button" class="bg-primary text-white py-2 px-4 rounded-full transition-colors hover:bg-gray-800">Próximo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section id="depoimentos" class="py-16 bg-[#2a2829]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Depoimentos de Clientes</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Depoimento 1 -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <p class="text-lg leading-relaxed italic text-gray-700 mb-4">"Excelente serviço de segurança. Sinto-me mais seguro desde que contratei a Segurança Vitória."</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-center space-x-1 mb-4">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <p class="text-lg leading-relaxed italic text-gray-800 mb-4">"Excelente serviço de segurança. Sinto-me mais seguro desde que contratei a Segurança Vitória."</p>
                     <p class="font-semibold text-primary">- Marina Oliveira</p>
                 </div>
                 <!-- Depoimento 2 -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <p class="text-lg leading-relaxed italic text-gray-700 mb-4">"Equipe dedicada e atenciosa. Recomendo os serviços da Segurança Vitória a todos que buscam proteção de qualidade."</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-center space-x-1 mb-4">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <p class="text-lg leading-relaxed italic text-gray-800 mb-4">"Equipe dedicada e atenciosa. Recomendo os serviços da Segurança Vitória a todos que buscam proteção de qualidade."</p>
                     <p class="font-semibold text-primary">- João Silva</p>
                 </div>
                 <!-- Depoimento 3 -->
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <p class="text-lg leading-relaxed italic text-gray-700 mb-4">"Profissionais competentes e confiáveis. A Segurança Vitória é a melhor escolha em segurança privada."</p>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-center space-x-1 mb-4">
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <p class="text-lg leading-relaxed italic text-gray-800 mb-4">"Profissionais competentes e confiáveis. A Segurança Vitória é a melhor escolha em segurança privada."</p>
                     <p class="font-semibold text-primary">- Ana Santos</p>
                 </div>
             </div>
@@ -246,11 +373,11 @@
                     
                     <p class="text-lg text-gray-700 mb-2 font-semibold">Contato:</p>
                     <p class="text-gray-600">(51) 3556-5127</p>
-                    <p class="text-gray-600">(51) 99018-2194</p>
-                    <p class="text-gray-600 mb-4">(51) 98045-6161</p>
+                    <p class="text-gray-600">(51) 99441-0164</p>
+                    <p class="text-gray-600 mb-4">(51) 99959-0595</p>
                     
                     <!-- Botão para o WhatsApp -->
-                    <a href="https://wa.me/5551990182194?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." target="_blank" class="mt-4 flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors">
+                    <a href="https://wa.me/5551996201635?text=Ol%C3%A1%2C%20entrei%20no%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20de%20seguran%C3%A7a." target="_blank" class="mt-4 flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full transition-colors">
                         <!-- Ícone da imagem do WhatsApp -->
                         <img src="https://i.ibb.co/KpzDshMp/Design-sem-nome-3.png" alt="Ícone do WhatsApp" class="h-6 w-6">
                         <span>WhatsApp</span>
@@ -294,6 +421,100 @@
             </p>
         </div>
     </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
 
+        // Adiciona um evento de clique para abrir o menu
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('-translate-x-full');
+            }, 10);
+        });
+
+        // Adiciona um evento de clique para fechar o menu
+        mobileMenuCloseButton.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300); // O tempo precisa ser o mesmo da transição CSS
+        });
+
+        // Adiciona um evento de clique em cada link para fechar o menu
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); // O tempo precisa ser o mesmo da transição CSS
+            });
+        });
+
+        // Lógica do Carrossel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#carousel-wrapper > div');
+        const totalSlides = slides.length;
+        const wrapper = document.getElementById('carousel-wrapper');
+        const nextButton = document.getElementById('next-button');
+        const prevButton = document.getElementById('prev-button');
+
+        const updateCarousel = () => {
+            let offset = -currentSlide * 100;
+            if (window.innerWidth >= 768) {
+                // Para desktop, mostra 3 slides por vez
+                const desktopSlidesToShow = 3;
+                let desktopOffset = -Math.floor(currentSlide / desktopSlidesToShow) * 100;
+                wrapper.style.transform = `translateX(${desktopOffset}%)`;
+
+            } else {
+                // Para mobile, mostra 1 slide por vez
+                wrapper.style.transform = `translateX(${offset}%)`;
+            }
+        };
+
+        const goToNextSlide = () => {
+             if (window.innerWidth >= 768) {
+                // Para desktop
+                const desktopSlidesToShow = 3;
+                let currentBlock = Math.floor(currentSlide / desktopSlidesToShow);
+                let totalBlocks = Math.ceil(totalSlides / desktopSlidesToShow);
+                currentBlock = (currentBlock + 1) % totalBlocks;
+                currentSlide = currentBlock * desktopSlidesToShow;
+            } else {
+                // Para mobile
+                currentSlide = (currentSlide + 1) % totalSlides;
+            }
+            updateCarousel();
+        };
+
+        const goToPrevSlide = () => {
+            if (window.innerWidth >= 768) {
+                // Para desktop
+                const desktopSlidesToShow = 3;
+                let currentBlock = Math.floor(currentSlide / desktopSlidesToShow);
+                let totalBlocks = Math.ceil(totalSlides / desktopSlidesToShow);
+                currentBlock = (currentBlock - 1 + totalBlocks) % totalBlocks;
+                currentSlide = currentBlock * desktopSlidesToShow;
+            } else {
+                // Para mobile
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            }
+            updateCarousel();
+        };
+
+        nextButton.addEventListener('click', goToNextSlide);
+        prevButton.addEventListener('click', goToPrevSlide);
+
+        window.addEventListener('resize', () => {
+            currentSlide = 0;
+            updateCarousel();
+        });
+        
+        // Initial setup
+        updateCarousel();
+    </script>
 </body>
 </html>
